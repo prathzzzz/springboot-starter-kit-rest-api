@@ -47,7 +47,7 @@ public class AuthenticationService {
     private final TokenBlacklistService tokenBlacklistService;
 
     public AuthenticationResponse register(RegisterDTO request) {
-
+    
         log.info("Attempting to register new user with email: {}", request.getEmail());
         if (userRepository.existsByEmail(request.getEmail())) {
             log.warn("Registration failed - Email already exists: {}", request.getEmail());
